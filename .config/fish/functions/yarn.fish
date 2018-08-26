@@ -1,0 +1,1 @@
+/Users/mash/.config/fisherman/nvm/yarn.fish

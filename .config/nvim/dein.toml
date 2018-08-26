@@ -1,0 +1,98 @@
+
+# ==========================================================
+# color
+# ==========================================================
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/iceberg.rc.vim
+'''
+# ==========================================================
+# basic
+# ==========================================================
+
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+depends = ''
+if = "has('nvim')"
+on_ft = ''
+on_cmd = ''
+hook_add = '''
+source ~/.config/nvim/plugins/nerdtree.rc.vim
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+source ~/.config/nvim/plugins/nerdcommenter.rc.vim
+'''
+
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['Shougo/context_filetype.vim']
+hook_add = '''
+" NORMALモードのカーソル移動中に頻繁に切り替わるとうざいのでデフォは無効化しておく(helpは例外)
+let g:precious_enable_switch_CursorMoved = { '*': 0, 'help': 1 }
+" INSERTモードのON／OFFに合わせてトグル
+autocmd MyAutoCmd InsertEnter * :PreciousSwitch
+autocmd MyAutoCmd InsertLeave * :PreciousReset
+'''
+
+
+# ==========================================================
+# filer
+# ==========================================================
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+'''
+
+#[[plugins]]
+#repo = 'Shougo/unite.vim'
+#hook_add = '''
+#nnoremap <silent> fb :<C-u>Unite buffer<CR>
+#'''
+#
+#[[plugins]]
+#repo = 'Shougo/vimfiler.vim'
+#depends = 'unite.vim'
+#hook_add = '''
+#source ~/.config/nvim/plugins/vimfiler.rc.vim
+#'''
+
+
+# ==========================================================
+# powerline
+# ==========================================================
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['tagbar', 'vim-fugitive']
+hook_add = '''
+source ~/.config/nvim/plugins/airline.rc.vim
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+depends = 'vim-airline'
+hook_add = '''
+let g:airline_theme='luna'
+'''
+

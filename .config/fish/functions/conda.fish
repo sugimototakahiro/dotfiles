@@ -1,0 +1,1 @@
+/Users/mash/.pyenv/versions/anaconda3-4.1.1/etc/fish/conf.d/conda.fish
